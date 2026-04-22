@@ -6,22 +6,22 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: cce26aad91af079a721750a5bdcb5ca7435bf2feef4642afcf580d58cb151bd4
 
 build:
   noarch: python
-  number: 0
+  number: 1
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
   host:
-    - python >=3
+    - python {{ python_min }}
     - pip
     - flit
     - numpy >=1.20.0
   run:
-    - python >=3
+    - python >={{ python_min }}
     - numpy >=1.20.0
 
 test:
@@ -30,6 +30,7 @@ test:
   requires:
     - pytest-codeblocks
     - pytest
+    - python {{ python_min }}
   source_files:
     - README.md
     - tests
