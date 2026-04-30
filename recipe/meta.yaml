@@ -1,13 +1,13 @@
 {% set name = "npx" %}
-{% set version = "0.1.1" %}
+{% set version = "0.1.8" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: cce26aad91af079a721750a5bdcb5ca7435bf2feef4642afcf580d58cb151bd4
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: efcedd9f8090864c1ad154307281302e931dfab60b495fada78bb505ac884eb9
 
 build:
   noarch: python
